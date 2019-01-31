@@ -1,0 +1,33 @@
+[System]
+Name='fuzzy_logic'
+Type='mamdani'
+Version=2.0
+NumInputs=1
+NumOutputs=1
+NumRules=3
+AndMethod='min'
+OrMethod='max'
+ImpMethod='min'
+AggMethod='max'
+DefuzzMethod='centroid'
+
+[Input1]
+Name='error'
+Range=[0 20]
+NumMFs=3
+MF1='low':'trimf',[-8.333 0 8.333]
+MF2='medium':'trimf',[1.667 10 18.33]
+MF3='high':'trimf',[11.67 20 28.33]
+
+[Output1]
+Name='output'
+Range=[0 160]
+NumMFs=3
+MF1='low':'trimf',[-66.67 0 66.67]
+MF2='medium':'trimf',[13.33 80 146.7]
+MF3='high':'trimf',[93.33 160 226.7]
+
+[Rules]
+1, 1 (1) : 2
+2, 2 (1) : 2
+3, 3 (1) : 2
